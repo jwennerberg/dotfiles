@@ -1,16 +1,22 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-set softtabstop=2
-set sw=2 et
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set autoindent
 set smartindent
+set number
 "set background=dark
+"set cursorline
 
 highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
 match LiteralTabs /\s\  /
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
+
+au BufRead,BufNewFile Makefile* set noexpandtab
+"autocmd FileType ruby,yaml setlocal expandtab autoindent shiftwidth=2 softtabstop=2
 
 ""function! Folding()
 "  :au BufWinLeave *.* mkview
