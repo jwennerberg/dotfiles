@@ -1,0 +1,22 @@
+[user]
+  name = Johan Wennerberg
+  email = jwennerberg@gmail.com
+
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[core]
+  editor = vim
+
+[alias]
+  logf = log --decorate=full
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ci = commit
+  df = diff
+
+[push]
+  default = simple
