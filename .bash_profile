@@ -12,8 +12,9 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export GOPATH=$HOME/go
+export OS_OUTPUT_GOPATH=1
 
-export PATH
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin
 
 export PS1="\[\e[32m\]\$(parse_git_branch 2>/dev/null)\[\e[m\][\h:\W]\\$ "
